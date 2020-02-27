@@ -13,7 +13,7 @@ func main() {
 	gin.DefaultErrorWriter = io.MultiWriter(f)
 
 	r := gin.New()
-	r.Use(gin.Logger())
+	r.Use(gin.Logger(),gin.Recovery())
 	r.GET("/test", func(c *gin.Context) {
 		name := c.DefaultQuery("name", "default_name")
 		c.String(200, "%s", name)

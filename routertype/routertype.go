@@ -20,7 +20,7 @@ func main() {
 	})
 
 	r.Any("/any", func(c *gin.Context) {
-		c.String(200, "delete")
+		c.String(200, "any")
 	})
 
 	r.Run()
